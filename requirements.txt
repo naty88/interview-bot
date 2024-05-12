@@ -1,2 +1,6 @@
 openai~=1.27.0
 utils~=1.0.2
+streamlit~=1.34.0
+streamlit-chat~=0.1.1
+pydantic~=2.7.1
+pillow~=10.3.0
