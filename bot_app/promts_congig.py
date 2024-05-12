@@ -2,6 +2,8 @@ from pydantic import BaseModel
 
 
 class PromtsConfig(BaseModel):
+    number_of_questions: int = 3
+    promt_language: str = "English"
     job_description_promt: str = """Job description of advertised OpenAI Technical Expert / Data Scientist position:
             TASKS:
             Development and implementation of Machine Learning / Artificial Intelligence models for applications, e.g. in the area of Natural Language Processing or Computer Vision, with a focus on OpenAI technologies to improve our services and processes
@@ -18,13 +20,13 @@ class PromtsConfig(BaseModel):
             Strong analytical skills and the ability to solve complex problems
             Strong English communication skills are required, and basic knowledge of German is preferred.
             """
+    initial_promt: str = f"""Job description: {job_description_promt}.
+                        Generate {number_of_questions} unique and relevant interview questions for a candidate applying for this position. 
+                        Ensure the questions assess various aspects of the candidate's suitability for the position, such as skills, experience, and fit for the company culture.
+                        The questions should be formulated in {promt_language} language."""
     evaluation_promt: str = f"""Job description: {job_description_promt}.
-            As an AI interview assistant, your task is to evaluate the quality and depth of the candidate's responses and make a clear hiring decision for this job position.
-            Consider the following:
-            Does the candidate provide detailed answers that demonstrate their understanding and expertise?
-            Can you find tangible examples in their responses that relate to the job description?
-            Does the candidate elaborate on how they have used the necessary skills or experiences to overcome challenges or achieve results?
-            Do the responses suggest the candidate has the ability to perform well in the role's complexities and challenges?
-            If the candidate's responses are inadequate, vague, or don't clearly demonstrate the needed skills or experiences, they may not be a suitable match for the role. In such cases, tactfully communicate this by saying: "Thank you for your responses. However, based on the answers provided, it appears there may be a misalignment with the requirements of the role we're seeking to fill. At this time, we cannot extend an offer. We appreciate your time and effort and wish you the best in your future endeavors."
-            If the responses indicate a strong fit for the role, then acknowledge the candidate's suitability by saying: "Thank you for your thoughtful responses. Based on your answers, it appears that your skills, experience, and understanding align well with the requirements of the role. We will be in touch with the next steps."
-            """
+                As an AI interview assistant, your task is to assess a candidate's answers for this position.
+                Evaluate the quality and depth of the candidate's answers and make a clear hiring decision based on the candidate's performance.
+                Please ensure that your evaluation considers the candidate's expertise, problem-solving skills, technical knowledge, and communication abilities..
+                Your decision should be well-supported and consider the candidate's potential contributions to the role.
+                """
