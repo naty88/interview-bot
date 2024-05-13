@@ -5,7 +5,7 @@ from typing import List
 from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
-from chat_bot.promts_congig import PromtsConfig
+from chat_bot.promts_config import PromtsConfig
 from utils import remove_number
 
 

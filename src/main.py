@@ -35,7 +35,7 @@ def ask_question() -> None:
 
 
 def get_answer() -> None:
-    if answer := st.chat_input(placeholder="Your answer:  "):
+    if answer := st.chat_input(placeholder="Your answer: "):
         st.session_state["answers"].append((generate_uuid(), answer))
         st.session_state['interview_step'] += 1
         st.rerun()
