@@ -4,7 +4,7 @@ from typing import List
 import streamlit as st
 from streamlit_chat import message
 
-from bot_app.job_interview_bot import JobInterviewBot
+from chat_bot.job_interview_bot import JobInterviewBot
 from utils import generate_uuid
 
 st.set_page_config(

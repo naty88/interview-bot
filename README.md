@@ -1,6 +1,6 @@
 # Repository Structure
 - source repository:
-  - Chat-Bot application [src/bot_app/main.py](src%2Fbot_app%2Fmain.py)
+  - Chat-Bot application [src/main.py](src%2Fmain.py)
   - helper functions [src/utils.py](src%2Futils.py)
 
 # Usage / How to Run
