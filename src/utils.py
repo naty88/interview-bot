@@ -10,4 +10,14 @@ def generate_uuid() -> str:
 
 
 def remove_number(question: str) -> str:
-    return re.search(f"\d+\. (.*\?)", question).group(1)
+    """
+   Remove the numbering from a question string.
+   Args:
+       question (str): The question string containing a numbering followed by the actual question.
+   Returns:
+       str: The question string with the numbering removed.
+   """
+    if question and question[0].isdigit():
+        result = re.search(f"\d+\. (.*\?)", question)
+        if result:
+            return result.group(1)

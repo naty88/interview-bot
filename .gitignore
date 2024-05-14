@@ -9,3 +9,6 @@ gen
 
 # jupyter
 .ipynb_checkpoints
+
+### Python template
+__pycache__/
